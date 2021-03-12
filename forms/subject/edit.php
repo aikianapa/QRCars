@@ -18,7 +18,7 @@
                                 <div class="col-sm-10">
                                     <select wb-tree="item=subjects&sort=name"
                                         placeholder="Тип сущности..." name="subject" class="form-control">
-                                        <option value="{{id}}" data-district="{{id}}">{{name}}</option>
+                                        <option value="{{id}}" data-form="subject/sub_{{id}}">{{name}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -29,6 +29,9 @@
                                     <input type="text" class="form-control" name="name" placeholder="Наименование">
                                 </div>
                             </div>
+
+                            <wb-module wb="module=subform&form=subject&watch=[name=subject]" name="text" />
+
                 </form>
 
             </div>
