@@ -25,17 +25,22 @@ class modVin {
         
         try {
             $vin = new Vin($number);
-            $this->vin = (object)[
-                'vin'      => $vin->getVin()
-               ,'wmi'      => $vin->getWmi()
-               ,'vds'      => $vin->getVds()
-               ,'vis'      => $vin->getVis()
-               ,'region'   => $vin->getRegion()
-               ,'country'  => $vin->getCountry()
-               ,'vendor'   => $vin->getManufacturer()
-               ,'year'     => $vin->getModelYear()
-           ];
         } catch (InvalidArgumentException $e) {
+            $vin = null;
+        }
+
+        if (is_object($vin)) {
+        $this->vin = (object)[
+             'vin'      => $vin->getVin()
+            ,'wmi'      => $vin->getWmi()
+            ,'vds'      => $vin->getVds()
+            ,'vis'      => $vin->getVis()
+            ,'region'   => $vin->getRegion()
+            ,'country'  => $vin->getCountry()
+            ,'vendor'   => $vin->getManufacturer()
+            ,'year'     => $vin->getModelYear()
+        ];
+        } else {
             $this->vin = (object)[
                 'vin'      => null
                ,'wmi'      => null
