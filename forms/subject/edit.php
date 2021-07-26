@@ -14,8 +14,8 @@
                 <form id="{{_form}}EditForm">
                     <input type="checkbox" class="custom-control-input" name="active" id="{{_form}}ValueItemActive">
                             <div class="form-group row">
-                                <label class="col-sm-2 form-control-label">Тип сущности</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-3 form-control-label">Тип сущности</label>
+                                <div class="col-sm-9">
                                     <select wb-tree="item=subjects&sort=name"
                                         placeholder="Тип сущности..." name="subject" class="form-control">
                                         <option value="{{id}}" data-form="subject/sub_{{id}}">{{name}}</option>
@@ -24,13 +24,13 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 form-control-label">Наименование</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-3 form-control-label">Наименование</label>
+                                <div class="col-sm-9">
                                     <input type="text" class="form-control" name="name" placeholder="Наименование">
                                 </div>
                             </div>
 
-                            <wb-module wb="module=subform&form=subject&watch=[name=subject]" name="text" />
+                            <wb-module wb="module=subform&form=subject&watch=[name=subject]" name="details" />
 
                 </form>
 
