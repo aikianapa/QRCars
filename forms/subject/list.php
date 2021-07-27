@@ -74,8 +74,8 @@
                                     <td class="nowrap">
                                         {{name}}
                                     </td>
-                                    <td wb-tree="item=subjects&branch={{subject}}&children=false">
-                                            <span>{{name}}</span>
+                                    <td>
+                                            <span>{{subject}}</span>
                                     </td>
                                     <td class="nowrap">
                                         {{created}}
