@@ -11,6 +11,8 @@ RewriteBase /
 Options +FollowSymLinks
 RewriteEngine On
 
+RewriteRule ^vin\/(.*)$ vin.php?vin=$1 [L,QSA]
+
 RewriteRule ^(.*)\.less$ index.php 
 RewriteRule ^(.*)\.scss$ index.php 
 

@@ -1,6 +1,7 @@
 /engine/
 /database/users.json
 /database/_cache/*
+/uploads/_cache/*
 engine
 *.pid
 *.log
