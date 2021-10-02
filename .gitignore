@@ -1,5 +1,6 @@
 /engine/
 /database/users.json
+/database/_driver.ini
 /database/_cache/*
 /uploads/_cache/*
 engine

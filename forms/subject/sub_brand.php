@@ -3,7 +3,7 @@
 <div class="form-group row">
     <label class="col-sm-2 form-control-label">Логотип</label>
     <div class="col-sm-10">
-        <wb-module wb="module=filepicker&mode=single" name="logo" />
+        <wb-module wb="module=filepicker&mode=single&view=contain" wb-path="/uploads/brands"  name="logo" />
     </div>
 </div>
 
