@@ -3,16 +3,22 @@ require __DIR__ . '/vendor/autoload.php';
 use InvalidArgumentException;
 use Sunrise\Vin\Vin;
 
-class modVin {
+/*
+возвращает информацию по vin коду
 
+*/
+
+
+class modVin {
     function __construct($app) {
         $this->app = &$app;
         $out = false;
         $mode = $app->vars("_route.mode");
         $this->init();
         if ($mode > '' && $mode !== 'init') {
-            method_exists($this,$mode) ? $out=@$this->$mode() : null;
-        } 
+            method_exists($this,$mode) ? $out=@$this->$mode() : $out=@$this->getvin($mode);
+        }
+        header('Content-Type: application/json; charset=utf-8');
         if ($out) echo $out;
         die;
     }
@@ -23,11 +29,10 @@ class modVin {
     }
 
     function getvin($number = 'WBANJ51020CV06259') {
-        
         try {
             $vin = new Vin($number);
         } catch (InvalidArgumentException $e) {
-            $vin = null;
+            return json_encode(null);
         }
 
         if (is_object($vin)) {
@@ -43,7 +48,7 @@ class modVin {
         ];
         isset($this->wmi[$this->vin->wmi]) ? $this->vin->vendor = $this->wmi[$this->vin->wmi] : null;
         is_array($this->vin->year) ? $this->vin->year = array_pop($this->vin->year) : null;
-
+        return json_encode($this->vin);
         } else {
             $this->vin = (object)[
                 'vin'      => null

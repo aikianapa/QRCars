@@ -43,7 +43,7 @@
 
                     <wb-foreach wb="table=subject&sort=name" wb-filter="active=on&subject=brand">
                         <li value="{{id}}" class="list-group-item cursor-pointer"
-                        data-ajax="{'target':'#modelsList','filter_remove': 'active,brand','filter_add':{'brand':'{{_id}}'}}" >{{name}}</li>
+                        data-ajax="{'target':'#modelsList','filter_remove,details.brand': 'active','filter_add':{'details.brand':'{{_id}}'}}" >{{name}}</li>
                     </wb-foreach>
                 </ul>
             </div>
